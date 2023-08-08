@@ -33,7 +33,6 @@ build({
     platform: 'node',
     target: ['node16'],
     format: 'cjs',
-    logLevel: "info",
     watch: isWatchEnabled && { onRebuild: handleRebuild() },
     minify: !isWatchEnabled,
     minifyWhitespace: !isWatchEnabled,

@@ -1,8 +1,6 @@
-fx_version("cerulean")
-game("gta5")
+fx_version "cerulean"
+game "gta5"
 
-server_only("yes")
+server_only "yes"
 
-server_scripts({
-    "dist/server.js",
-})
+server_script "dist/server.js"
