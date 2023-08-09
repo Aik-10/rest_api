@@ -18,7 +18,7 @@ set api:port "4290"
 
 #### Custom event Register / Trigger
 <details>
- <summary><code>POST</code> <code><b>/EventHandler/{event}/{source}</b></code> <code></code></summary>
+ <summary><code>POST</code> <code><b>/EventHandler/{event}/{source}</b></code></summary>
 
 ##### Parameters
 
@@ -54,7 +54,7 @@ set api:port "4290"
 
 #### Run TriggerClientEvent
 <details>
- <summary><code>POST</code> <code><b>/TriggerClientEvent/{event}/{source}</b></code> <code></code></summary>
+ <summary><code>POST</code> <code><b>/TriggerClientEvent/{event}/{source}</b></code></summary>
 
 ##### Parameters
 
@@ -83,7 +83,7 @@ set api:port "4290"
 
 #### Run TriggerServerEvent
 <details>
- <summary><code>POST</code> <code><b>/TriggerServerEvent/{event}/{source}</b></code> <code></code></summary>
+ <summary><code>POST</code> <code><b>/TriggerServerEvent/{event}/{source}</b></code></summary>
 
 ##### Parameters
 
