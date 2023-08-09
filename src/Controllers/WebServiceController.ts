@@ -64,7 +64,7 @@ export class WebServiceController {
 
         this.app.listen(port, () => {
             logger.info(`REST API listening on http://127.0.0.1:${port}/`);
-            emit(`${GetCurrentResourceName()}:webSocker:started`);
+            emit(`${GetCurrentResourceName()}:WebSocket:started`);
         });
     }
 }
