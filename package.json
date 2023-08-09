@@ -1,5 +1,5 @@
 {
-  "name": "@system/pp_restapi",
+  "name": "@system/rest_api",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
