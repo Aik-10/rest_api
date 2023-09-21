@@ -48,5 +48,5 @@ build({
         ),
     )
     .catch(() => {
-        throw new Error('Fatal error occurred during build process.');
+        console.error('Fatal error occurred during build process.')
     });
