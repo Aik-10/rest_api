@@ -1,0 +1,75 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  create-release:
+    name: prebuild & create release 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install packages
+        run: sudo apt install zip
+
+      - name: Checkout source code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+      
+      - name: Build
+        run: pnpm build
+
+      - name: Update tag ref
+        uses: EndBug/latest-tag@latest
+        with:
+          tag-name: ${{ github.ref_name }}
+
+      - name: Bundle files
+        run: |
+          mkdir -p ./temp/rest_api
+          cp ./{README.md,fxmanifest.lua} ./temp/rest_api
+          cp -r ./dist ./temp/rest_api/dist/
+          cd ./temp && zip -r ../rest_api.zip ./rest_api
+
+      - name: Create Release
+        uses: "marvinpinto/action-automatic-releases@v1.2.1"
+        id: auto_release
+        with:
+          repo_token: "${{ secrets.GIT_ACTION }}"
+          title: ${{ env.RELEASE_VERSION }}
+          prerelease: true
+          files: rest_api.zip
+
+        env:
+          CI: false
+          GITHUB_TOKEN: ${{ secrets.GIT_ACTION }}
