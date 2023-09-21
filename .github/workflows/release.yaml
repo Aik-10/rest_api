@@ -52,7 +52,7 @@ jobs:
       - name: Bundle files
         run: |
           mkdir -p ./temp/rest_api
-          cp ./{README.md,fxmanifest.lua} ./temp/rest_api
+          cp ./{readme.md,fxmanifest.lua} ./temp/rest_api
           cp -r ./dist ./temp/rest_api/dist/
           cd ./temp && zip -r ../rest_api.zip ./rest_api
 
