@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "node esbuild.config.js --mode=watch",
-    "build": "tsc -p src && node esbuild.config.js",
+    "watch": "cross-env IS_WATCH_MODE=1 node ./esbuild.config.js",
+    "build": "tsc -p src && node ./esbuild.config.js",
     "test": "echo testings"
   },
   "devDependencies": {
@@ -16,6 +16,7 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "colorette": "^2.0.20",
+    "cross-env": "^7.0.3",
     "esbuild": "^0.19.2",
     "eslint": "^8.49.0",
     "prettier": "^3.0.3",
