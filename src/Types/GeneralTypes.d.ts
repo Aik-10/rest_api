@@ -1,6 +1,6 @@
 type ConfigValidationResponse =
     | { status: 'success' }
-    | { status: 'error'; errors: Array<string> };
+    | { status: 'error'; errors: Error };
 
 type T = any;
 

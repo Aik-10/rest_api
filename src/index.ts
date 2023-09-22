@@ -10,11 +10,12 @@ on('onResourceStart', async (resourceName: string) => {
         const valid = await config.validate();
 
         if (valid.status === 'error') {
-            console.error(valid.errors);
-            StopResource(resourceName);
+            console.error(valid.errors?.message);
+            return;
         }
 
         exports("RegisterRestApiEvent", config.RegisterRestApiEvent);
+        exports("registerApiGet", config.RegisterRestApiGETEvent);
         new WebServiceController(config);
     } catch (e: any) {
         logger.error(e.message, e?.code);
