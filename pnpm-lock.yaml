@@ -20,8 +20,8 @@ devDependencies:
     specifier: 2.0.6086-1
     version: 2.0.6086-1
   '@types/common-tags':
-    specifier: ^1.8.2
-    version: 1.8.2
+    specifier: ^1.8.3
+    version: 1.8.3
   '@types/cors':
     specifier: ^2.8.14
     version: 2.8.14
@@ -350,8 +350,8 @@ packages:
       '@types/node': 20.8.4
     dev: true
 
-  /@types/common-tags@1.8.2:
-    resolution: {integrity: sha512-Z5UcOnlqxFm0tCCTEhkcVOfSihWOMyKypIWHtQNSYh6fMdPUIVpNdLBYutDpDXVHsMUrYzI2IczUHXIzpUovmQ==}
+  /@types/common-tags@1.8.3:
+    resolution: {integrity: sha512-v3smfzf7umSwpkJrmlUe+apSv6bVnrIFCeBeprnP4f8lIh6pECZxyD50e8yFwfouIt85TdxN5yXiFwS5fnsS3w==}
     dev: true
 
   /@types/connect@3.4.35:
