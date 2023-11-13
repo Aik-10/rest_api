@@ -11,7 +11,7 @@
     "@citizenfx/server": "2.0.6086-1",
     "@types/common-tags": "^1.8.2",
     "@types/cors": "^2.8.14",
-    "@types/express": "^4.17.19",
+    "@types/express": "^4.17.21",
     "@types/node": "^20.8.4",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
